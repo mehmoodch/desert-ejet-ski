@@ -6,112 +6,74 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors - Desert meets Water */
-    --background: 15 8% 8%;
-    --foreground: 45 15% 95%;
+    /* palette */
+    --brand-1: 19 81% 52%;   /* #E76020 */
+    --brand-2: 28 85% 56%;   /* #EE892F */
+    --sand:    39 63% 67%;   /* #E0BB76 */
+    --sage:    112 13% 48%;  /* #6E896A */
+    
+    --onyx:    60 7% 5%;     /* #0F0F0D */
 
-    --card: 15 10% 12%;
-    --card-foreground: 45 15% 95%;
+    /* site tokens (shadcn/TW) */
+    --background: var(--onyx);
+    --foreground: 0 0% 96%;
+    --card: 60 7% 7%;
+    --card-foreground: 0 0% 96%;
+    --border: 60 7% 14%;
+    --input: 60 7% 12%;
 
-    --popover: 15 12% 10%;
-    --popover-foreground: 45 15% 95%;
-
-    /* Primary: Deep Turquoise (Water) */
-    --primary: 21 68% 48%;
+    --primary: var(--brand-1);
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 21 68% 58%;        /* lighter for gradients */
-    --ring: 21 68% 48%;
+    --primary-glow: var(--brand-2);
 
-    /* Secondary: Warm Desert Gold */
     --secondary: 45 85% 65%;
     --secondary-foreground: 15 20% 15%;
+    --muted: 60 7% 10%;
+    --muted-foreground: 0 0% 78%;
+    --accent: var(--sand);
+    --accent-foreground: 0 0% 10%;
 
-    /* Muted: Sandy tones */
-    --muted: 25 15% 20%;
-    --muted-foreground: 45 20% 70%;
+    --ring: var(--brand-1);
 
-    /* Accent: Desert sunset */
-    --accent: 35 75% 55%;
-    --accent-foreground: 15 20% 15%;
-
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 25 15% 25%;
-    --input: 25 15% 18%;
-    --ring: 185 84% 35%;
-
-    /* Design System Extensions */
-    --desert-sand: 45 50% 85%;
-    --desert-dune: 35 40% 70%;
-    --water-deep: 200 95% 25%;
-    --water-crystal: 185 70% 85%;
-    
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(15 8% 8%), hsl(25 15% 15%));
-    --gradient-water: linear-gradient(135deg, hsl(21 68% 42%), hsl(21 68% 58%));
-   
-    --gradient-desert: linear-gradient(135deg, hsl(45 85% 65%), hsl(35 75% 55%));
-    --gradient-sunset: linear-gradient(90deg, hsl(35 75% 55%), hsl(25 85% 60%), hsl(15 90% 65%));
-    
-    /* Shadows */
-    --shadow-luxury: 0 25px 50px -12px hsl(15 8% 8% / 0.8);
-    --shadow-glow: 0 0 40px hsl(21 68% 48% / 0.3);
-    --shadow-subtle: 0 4px 6px -1px hsl(15 8% 8% / 0.1);
-
-    /* Animations */
-    --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --radius: 1rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* updated backgrounds/shadows */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--onyx)), hsl(60 7% 9%));
+    --gradient-water: linear-gradient(135deg, hsl(var(--brand-1)), hsl(var(--brand-2)));
+    --shadow-glow: 0 0 40px hsl(var(--brand-1) / .35);
   }
 
+  body { background: hsl(var(--background)); }
+
   .dark {
-    /* Maintain consistency in dark mode */
-    --background: 15 8% 8%;
-    --foreground: 45 15% 95%;
-    --card: 15 10% 12%;
-    --card-foreground: 45 15% 95%;
-    --popover: 15 12% 10%;
-    --popover-foreground: 45 15% 95%;
-    --primary: 21 68% 52%;
-    
+    /* Same palette—keep contrast in dark mode */
+    --background: 60 7% 5%;
+    --foreground: 0 0% 96%;
+    --card: 60 7% 7%;
+    --card-foreground: 0 0% 96%;
+    --popover: 60 7% 6%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 19 81% 54%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 45 85% 65%;
-    --secondary-foreground: 15 20% 15%;
-    --muted: 25 15% 20%;
-    --muted-foreground: 45 20% 70%;
-    --accent: 35 75% 55%;
-    --accent-foreground: 15 20% 15%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 25 15% 25%;
-    --input: 25 15% 18%;
-    --ring: 21 68% 48%;
-    --sidebar-background: 15 10% 10%;
-    --sidebar-foreground: 45 15% 90%;
-    --sidebar-primary: 185 84% 35%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 25 15% 18%;
-    --sidebar-accent-foreground: 45 15% 90%;
-    --sidebar-border: 25 15% 25%;
-    --sidebar-ring: 185 84% 35%;
+    --secondary: 124 25% 26%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 112 13% 18%;
+    --muted-foreground: 0 0% 78%;
+    --accent: 39 63% 67%;
+    --accent-foreground: 0 0% 10%;
+
+    --border: 60 7% 14%;
+    --input: 60 7% 12%;
+    --ring: 19 81% 52%;
+
+    --sidebar-background: 60 7% 6%;
+    --sidebar-foreground: 0 0% 92%;
+    --sidebar-primary: 19 81% 52%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 60 7% 12%;
+    --sidebar-accent-foreground: 0 0% 92%;
+    --sidebar-border: 60 7% 14%;
+    --sidebar-ring: 19 81% 52%;
   }
 }
 
