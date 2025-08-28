@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";   // ← remove BrowserRouter
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "@/components/ui/ScrollToTop";
@@ -14,16 +14,15 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
 
-        {/* Floating scroll-up arrow (shows after scrolling) */}
-        <ScrollToTop />
-      </BrowserRouter>
+      {/* Router is provided by main.tsx (HashRouter) */}
+      <Routes>
+        <Route path="/" element={<Index />} />
+        {/* Add your other routes above the catch-all */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      <ScrollToTop />
     </TooltipProvider>
   </QueryClientProvider>
 );
