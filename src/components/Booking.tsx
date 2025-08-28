@@ -60,7 +60,7 @@ export const Booking = () => {
                   <Input 
                     id="email"
                     type="email"
-                    placeholder="your@email.com"
+                    placeholder="yourmail@email.com"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     className="mt-1"
@@ -98,11 +98,15 @@ export const Booking = () => {
                       <SelectValue placeholder="Select time" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="9am">9:00 AM</SelectItem>
-                      <SelectItem value="11am">11:00 AM</SelectItem>
-                      <SelectItem value="1pm">1:00 PM</SelectItem>
-                      <SelectItem value="3pm">3:00 PM</SelectItem>
-                      <SelectItem value="5pm">5:00 PM (Sunset Special)</SelectItem>
+                      <SelectItem value="09am">09:00 AM</SelectItem>
+                      <SelectItem value="10am">10:00 AM</SelectItem>
+                      <SelectItem value="11pm">11:00 AM</SelectItem>
+                      <SelectItem value="12pm">12:00 PM</SelectItem>
+                      <SelectItem value="01pm">01:00 PM</SelectItem>
+                      <SelectItem value="02pm">02:00 PM</SelectItem>
+                      <SelectItem value="03pm">03:00 PM</SelectItem>
+                      <SelectItem value="04pm">04:00 PM</SelectItem>
+                      <SelectItem value="05pm">05:00 PM (Sunset Special)</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -116,10 +120,10 @@ export const Booking = () => {
                       <SelectValue placeholder="Select duration" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="1hr">1 Hour - $120</SelectItem>
-                      <SelectItem value="2hr">2 Hours - $220</SelectItem>
-                      <SelectItem value="3hr">3 Hours - $300</SelectItem>
-                      <SelectItem value="fullday">Full Day - $500</SelectItem>
+                      <SelectItem value="1hr">1 Hour - AED 120</SelectItem>
+                      <SelectItem value="2hr">2 Hours - AED 220</SelectItem>
+                      <SelectItem value="3hr">3 Hours - AED 300</SelectItem>
+                      <SelectItem value="fullday">Full Day - AED 500</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -141,15 +145,16 @@ export const Booking = () => {
               </div>
 
               <div>
-                <Label>Jet Ski Model</Label>
+                <Label>Choose package</Label>
                 <Select onValueChange={(value) => handleInputChange('jetski', value)}>
                   <SelectTrigger className="mt-1">
                     <SelectValue placeholder="Choose your ride" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="storm">Desert Storm X1 - Premium</SelectItem>
-                    <SelectItem value="oasis">Oasis Cruiser - Family</SelectItem>
-                    <SelectItem value="dune">Dune Racer Pro - Sport</SelectItem>
+                    <SelectItem value="Single">Single </SelectItem>
+                    <SelectItem value="storm">Couple </SelectItem>
+                    <SelectItem value="oasis"> Family</SelectItem>
+                    <SelectItem value="dune">Corporate agency</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -167,7 +172,7 @@ export const Booking = () => {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { icon: Calendar, title: "Flexible Dates", desc: "Easy rescheduling" },
-                { icon: Clock, title: "2hr Minimum", desc: "Maximum fun time" },
+                { icon: Clock, title: "1hr Minimum", desc: "Maximum fun time" },
                 { icon: Users, title: "Group Discounts", desc: "5+ people save 15%" },
                 { icon: CreditCard, title: "Secure Payment", desc: "100% protected" }
               ].map((item, index) => (
@@ -212,10 +217,10 @@ export const Booking = () => {
               <CardContent className="p-6">
                 <h4 className="font-semibold mb-4">Need Help?</h4>
                 <div className="space-y-2 text-sm">
-                  <p>📞 (555) JETSKI-1</p>
-                  <p>📧 book@desertejetski.com</p>
+                  <p>📞 +971 56 740 6001</p>
+                  <p>📧 info@desertejet.ae</p>
                   <p>🕒 Daily 8AM - 6PM</p>
-                  <p>📍 Desert Oasis Marina, NV</p>
+                  <p>📍 Al Badayer - Industrial 1, Sharjah, UAE</p>
                 </div>
               </CardContent>
             </Card>

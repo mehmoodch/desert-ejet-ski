@@ -1,3 +1,12 @@
+/* Brand palette from the Desert EJets logo */
+:root {
+  --primary: #881d1b;          /* deep maroon */
+  --primary-a: #8c2a22aa;      /* same with alpha for effects */
+  --secondary: #e07a2c;        /* burnt orange */
+  --secondary-a: #e07a2caa;    /* same with alpha */
+  --text-muted: #888;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -12,19 +21,17 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  /* was: #646cffaa */
+  filter: drop-shadow(0 0 2em var(--primary-a));
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  /* was: #61dafbaa */
+  filter: drop-shadow(0 0 2em var(--secondary-a));
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -37,6 +44,10 @@
   padding: 2em;
 }
 
+/* Optional: use the brand colors elsewhere */
+a { color: var(--primary); }
+a:hover { color: var(--secondary); }
+
 .read-the-docs {
-  color: #888;
+  color: var(--text-muted);
 }

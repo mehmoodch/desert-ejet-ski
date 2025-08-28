@@ -1,3 +1,4 @@
+import logo from '@/assets/logo.png';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
@@ -10,15 +11,33 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-bold mb-4">Desert Ejet Ski</h3>
+              {/* Replaced text heading with logo */}
+              <div className="mb-4">
+                <img
+                  src={logo}
+                  alt="Desert EJets"
+                  className="h-12 w-auto"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <span className="sr-only">Desert EJets</span>
+              </div>
+
               <p className="text-white/70 leading-relaxed">
-                Experience the ultimate adventure where pristine desert landscapes 
-                meet crystal-clear waters. Premium jet ski rentals in an oasis paradise.
+                Experience the ultimate adventure where pristine desert landscapes
+                meet crystal-clear waters. Premium jet ski rentals in an Sharjah Desert.
               </p>
             </div>
+
             <div className="flex space-x-4">
               {[Facebook, Instagram, Twitter, Youtube].map((Icon, index) => (
-                <Button key={index} variant="ghost" size="icon" className="text-white/70 hover:text-white hover:bg-white/10">
+                <Button
+                  key={index}
+                  variant="ghost"
+                  size="icon"
+                  className="text-white/70 hover:text-white hover:bg-white/10"
+                  aria-label={['Facebook', 'Instagram', 'Twitter', 'YouTube'][index]}
+                >
                   <Icon className="w-5 h-5" />
                 </Button>
               ))}
@@ -36,7 +55,7 @@ export const Footer = () => {
                 'About Us',
                 'Safety Guidelines',
                 'Pricing',
-                'Contact'
+                'Contact',
               ].map((link, index) => (
                 <li key={index}>
                   <a href="#" className="text-white/70 hover:text-white transition-colors animated-underline">
@@ -53,18 +72,18 @@ export const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="text-white/70">(555) JETSKI-1</span>
+                <span className="text-white/70">+971 56 740 6001</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span className="text-white/70">hello@desertejetski.com</span>
+                <span className="text-white/70">info@desertejet.ae</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-primary" />
-                <span className="text-white/70">Desert Oasis Marina, Nevada</span>
+                <span className="text-white/70">Al Badayer - Industrial 1, Sharjah, UAE</span>
               </div>
             </div>
-            
+
             <div className="mt-6">
               <h5 className="font-semibold mb-2">Operating Hours</h5>
               <p className="text-white/70 text-sm">Daily: 8:00 AM - 6:00 PM</p>
@@ -79,8 +98,8 @@ export const Footer = () => {
               Subscribe to get special offers, free giveaways, and adventure updates.
             </p>
             <div className="space-y-3">
-              <Input 
-                type="email" 
+              <Input
+                type="email"
                 placeholder="Enter your email"
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
               />
@@ -88,7 +107,7 @@ export const Footer = () => {
                 Subscribe
               </Button>
             </div>
-            
+
             <div className="mt-6 space-y-2">
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full" />
@@ -106,7 +125,7 @@ export const Footer = () => {
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-white/70 text-sm">
-              © 2024 Desert Ejet Ski Rental. All rights reserved.
+              © 2025 Desert Ejet Ski Rental. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-white/70 hover:text-white transition-colors">Privacy Policy</a>

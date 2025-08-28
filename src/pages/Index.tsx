@@ -13,7 +13,7 @@ const Index = () => {
 
   useEffect(() => {
     // Update document title and meta description for SEO
-    document.title = "Desert Ejet Ski Rental - Premium Water Adventures in Desert Oasis";
+    document.title = "Desert Ejet Ski Rental - Premium Water Adventures in Sharjah Desert";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

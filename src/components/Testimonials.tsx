@@ -5,21 +5,21 @@ import customerImage from '@/assets/happy-customers.jpg';
 const testimonials = [
   {
     name: "Sarah Johnson",
-    location: "California",
+    location: "United States",
     rating: 5,
     text: "Absolutely incredible experience! The jet skis were top-notch and the desert oasis setting was breathtaking. Perfect for our anniversary celebration.",
     avatar: "SJ"
   },
   {
     name: "Miguel Rodriguez",
-    location: "Arizona",
+    location: "United Kingdom",
     rating: 5,
     text: "Best adventure activity I've ever done! The staff was professional, the equipment was pristine, and the scenery was simply magical.",
     avatar: "MR"
   },
   {
     name: "Emily Chen",
-    location: "Nevada",
+    location: "Canada",
     rating: 5,
     text: "Our family had the most amazing time. Even the kids were comfortable and safe. The sunset ride was the highlight of our vacation!",
     avatar: "EC"

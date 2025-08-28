@@ -17,9 +17,10 @@
     --popover-foreground: 45 15% 95%;
 
     /* Primary: Deep Turquoise (Water) */
-    --primary: 185 84% 35%;
+    --primary: 21 68% 48%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 185 84% 45%;
+    --primary-glow: 21 68% 58%;        /* lighter for gradients */
+    --ring: 21 68% 48%;
 
     /* Secondary: Warm Desert Gold */
     --secondary: 45 85% 65%;
@@ -48,13 +49,14 @@
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(15 8% 8%), hsl(25 15% 15%));
-    --gradient-water: linear-gradient(135deg, hsl(185 84% 35%), hsl(200 95% 45%));
+    --gradient-water: linear-gradient(135deg, hsl(21 68% 42%), hsl(21 68% 58%));
+   
     --gradient-desert: linear-gradient(135deg, hsl(45 85% 65%), hsl(35 75% 55%));
     --gradient-sunset: linear-gradient(90deg, hsl(35 75% 55%), hsl(25 85% 60%), hsl(15 90% 65%));
     
     /* Shadows */
     --shadow-luxury: 0 25px 50px -12px hsl(15 8% 8% / 0.8);
-    --shadow-glow: 0 0 40px hsl(185 84% 35% / 0.3);
+    --shadow-glow: 0 0 40px hsl(21 68% 48% / 0.3);
     --shadow-subtle: 0 4px 6px -1px hsl(15 8% 8% / 0.1);
 
     /* Animations */
@@ -88,7 +90,8 @@
     --card-foreground: 45 15% 95%;
     --popover: 15 12% 10%;
     --popover-foreground: 45 15% 95%;
-    --primary: 185 84% 45%;
+    --primary: 21 68% 52%;
+    
     --primary-foreground: 0 0% 100%;
     --secondary: 45 85% 65%;
     --secondary-foreground: 15 20% 15%;
@@ -100,7 +103,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 25 15% 25%;
     --input: 25 15% 18%;
-    --ring: 185 84% 35%;
+    --ring: 21 68% 48%;
     --sidebar-background: 15 10% 10%;
     --sidebar-foreground: 45 15% 90%;
     --sidebar-primary: 185 84% 35%;
@@ -180,5 +183,21 @@
 
   .zoom-in.visible {
     @apply scale-100 opacity-100;
+  }
+  .hero-video {
+    @apply absolute inset-0 w-full h-full object-cover will-change-transform;
+  }
+  .hero-overlay {
+    /* Uses your brand tokens: primary (maroon) + secondary (burnt orange) */
+    background: linear-gradient(
+      135deg,
+      hsl(var(--background) / 0.15) 0%,
+      hsl(var(--primary) / 0.45) 35%,
+      hsl(var(--secondary) / 0.30) 100%
+    );
+    @apply absolute inset-0 pointer-events-none;
+  }
+  .hero-scrim {
+    @apply absolute inset-0 bg-black/30 md:bg-black/20 pointer-events-none;
   }
 }
